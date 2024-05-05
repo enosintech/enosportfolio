@@ -12,8 +12,8 @@ const ScrollPrompt = () => {
       ease: "power1",
       duration: 0.5
     }, {
-      trigger: "#landing",
-      start: "top -5",
+      trigger: "#aboutImageGrowTrigger",
+      start: "top top",
       toggleActions: "play none none reverse",
     })
   }, [])

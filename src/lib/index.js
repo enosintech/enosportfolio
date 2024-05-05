@@ -3,6 +3,11 @@ import node from "/assets/icons/node.webp";
 import js from "/assets/icons/javascript.webp";
 import react from "/assets/icons/reactjs.webp";
 import tailwind from "/assets/icons/tailwind.webp";
+import dots from "/assets/icons/dots.png";
+import e from "/assets/icons/e.png";
+import n from "/assets/icons/n.png";
+import o from "/assets/icons/o.png";
+import s from "/assets/icons/s.png";
 
 import mainenos1 from "/assets/images/mainenos1.webp";
 import mainenos2 from "/assets/images/mainenos2.webp";
@@ -17,6 +22,7 @@ import landing2 from "/assets/videos/landing2.mp4";
 import landing3 from "/assets/videos/landing3.mp4";
 import landing4 from "/assets/videos/landing4.mp4";
 import landing5 from "/assets/videos/landing5.mp4";
+import workEnd from "/assets/videos/workend.mp4";
 
 import scroll from "../assets/animations/scroll.json";
 import click from "../assets/animations/click.json";
@@ -27,6 +33,11 @@ export const nodejs = node;
 export const javascript = js;
 export const reactjs = react;
 export const tailwindcss = tailwind;
+export const dotsIcon = dots;
+export const letterE = e;
+export const letterN = n;
+export const letterO = o;
+export const letterS = s;
 
 export const enos1 = mainenos1;
 export const enos2 = mainenos2;
@@ -41,6 +52,7 @@ export const landingVideo2 = landing2;
 export const landingVideo3 = landing3;
 export const landingVideo4 = landing4;
 export const landingVideo5 = landing5;
+export const workEndVideo = workEnd;
 
 export const scrollAnimation = scroll;
 export const clickAnimation = click;

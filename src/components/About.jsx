@@ -2,9 +2,10 @@ import { useGSAP } from "@gsap/react";
 import SplitType from "split-type";
 import { useState, useEffect } from "react";
 import Lottie from "lottie-react";
+import { Tilt } from 'react-tilt';
 
 import { triggerToAnimations } from "../utils/animations";
-import { enos4, javascript, nodejs, reactjs, scrollAnimation, tailwindcss } from "../lib";
+import { enos4, javascript, letterE, letterN, letterO, letterS, nodejs, reactjs, scrollAnimation, tailwindcss } from "../lib";
 
 const Image = (props) => {
     return (
@@ -15,6 +16,18 @@ const Image = (props) => {
 const About = () => {
 
     const [ time, setTime ] = useState([]);
+
+    const defaultOptions = {
+        reverse:        false,  
+        max:            35,     
+        perspective:    1000,   
+        scale:          1.1,   
+        speed:          1000,   
+        transition:     true,  
+        axis:           null,   
+        reset:          true,   
+        easing:         "cubic-bezier(.03,.98,.52,.99)",   
+    }
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -28,7 +41,7 @@ const About = () => {
 
         const split = SplitType.create(".aboutText", {types: "words"});
 
-        triggerToAnimations("#growImage", {
+        triggerToAnimations(".growImage", {
             height: "70%"
         }, {
             trigger: "#aboutImageGrowTrigger",
@@ -71,18 +84,23 @@ const About = () => {
 
   return (
     <>
-        <div id="scrollDissapearTrigger" className="w-[100vw] h-full flex items-center justify-evenly pt-[90px]">
-            <div id="growImage" className="w-[30%] h-[10%] rounded-[20px] shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] relative overflow-hidden">
-                <img id="scaleDownImage" src={enos4} className="w-full h-full object-cover scale-[2]" alt="main about image"/> 
+        <div id="scrollDissapearTrigger" className="w-[100vw] h-full flex items-start justify-evenly pt-[90px]">
+            <div className="flex items-center h-full">
+                <Tilt options={defaultOptions} className="w-[100%] h-[20%] flex items-center relative growImage">
+                    <div className="relative w-full h-full overflow-hidden rounded-[20px] shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
+                        <p className="absolute z-20 top-2 w-full text-center font-nohemiSemiBold">HOVER ME</p>
+                        <img id="scaleDownImage" src={enos4} className="w-full h-full object-cover scale-[2]" alt="main about image"/> 
+                    </div>
+                </Tilt>
             </div>
-            <div id="aboutText" className="w-[45%] h-[90%] rounded-[20px] backdrop-blur shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] flex flex-col gap-y-10 pt-14 pl-10">
+            <div id="aboutText" className="w-[45%] h-[90%] relative rounded-[20px] backdrop-blur shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] flex flex-col gap-y-10 pt-14 pl-10">
                 <h1 className="font-nohemiBold text-2xl">01. WHO</h1>
                 <p className="text-5xl font-nohemiLight text-justify max-w-[80%]">
                     Hi there, I am <text className="font-nohemiExtraBold">Enos Nsamba Jr</text>, a software developer and lifelong learner. <text className="text-transparent aboutText">I have an orientation for detail and symmetrical design.</text> <text className="text-transparent aboutText">I love when things fit and I have a keen eye for when they don't.</text>
                 </p>
             </div>
         </div>
-        <div className="w-[100vw] h-full flex items-center pl-[130px] pt-[90px]">
+        <div className="w-[100vw] h-full flex items-start pl-[130px] pt-[90px]">
             <div id="divShrink" className="w-[85%] h-[90%] rounded-[20px] backdrop-blur shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] flex items-center pl-20">
                 <div className="h-[85%] w-[90%] flex">
                     <div className="w-[40%] h-full flex flex-col items-center relative">

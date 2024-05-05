@@ -8,6 +8,8 @@ import ScrollPrompt from "./components/ScrollPrompt";
 
 import Landing from "./components/Landing";
 import Work from "./components/Work";
+import Skills from "./components/Skills";
+import Epilogue from "./components/Epilogue";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,9 +22,8 @@ const App = () => {
       <NavBar />
       <Landing />
       <Work />
-      <section className="">
-
-      </section>
+      <Skills />
+      <Epilogue />
     </>
   )
 }

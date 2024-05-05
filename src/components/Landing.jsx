@@ -18,13 +18,13 @@ const Landing = () => {
         gsap.set(vids[0], {autoAlpha: 1})
 
         const crossFade = () => {
-        gsap.timeline()
-        .to(vids[0], {autoAlpha: 0, duration: fade})
-        .to(vids[1], {autoAlpha: 1, duration: fade}, 0)
+          gsap.timeline()
+          .to(vids[0], {autoAlpha: 0, duration: fade})
+          .to(vids[1], {autoAlpha: 1, duration: fade}, 0)
 
-        vids.push(vids.shift())
+          vids.push(vids.shift())
 
-        gsap.delayedCall(next, crossFade);
+          gsap.delayedCall(next, crossFade);
         }
 
         gsap.delayedCall(0, crossFade);
@@ -45,21 +45,19 @@ const Landing = () => {
     }, [])
 
   return (
-    <section id="landing" className="w-full h-[800vh] flex flex-col relative" onClick={() => {
-        console.log("clicked")
-    }}>
+    <section id="landing" className="w-full h-[800vh] flex flex-col relative">
         <div id="landingSlider" className="w-[300vw] h-[100vh] flex overflow-x-hidden absolute top-0 left-0 z-10">
             <Hero />
             <About />
         </div>
         <div id="bgPin" className="w-full h-[100vh] relative z-[-1]">
-        {
-          landingVideos.map((video, index) => (
-            <video key={video.id} index={index} className="w-full h-full object-cover motiv absolute top-0 left-0" playsInline={true} loop={true} autoPlay={true} muted={true}>
-                <source src={video.video} type="video/mp4"/>
-            </video>
-          ))
-        }
+          {
+            landingVideos.map((video, index) => (
+              <video key={video.id} index={index} className="w-full h-full object-cover motiv absolute top-0 left-0" playsInline={true} loop={true} autoPlay={true} muted={true}>
+                  <source src={video.video} type="video/mp4"/>
+              </video>
+            ))
+          }
         </div>
         <div className="w-full h-[100vh]"></div>
         <div className="w-full h-[100vh]"></div>

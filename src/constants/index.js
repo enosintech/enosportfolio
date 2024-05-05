@@ -48,10 +48,10 @@ export const landingVideos = [
     },
     {
         id: 4,
-        video: landingVideo5,
+        video: landingVideo1,
     },
     {
         id: 5,
-        video: landingVideo1,
+        video: landingVideo5,
     },
 ]

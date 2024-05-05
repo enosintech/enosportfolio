@@ -47,6 +47,15 @@
   src: url(/assets/fonts/Nohemi-Thin.ttf);
 }
 
+@keyframes pulse {
+  0% {
+    box-shadow: 0px 0px 0px 0px #2dbf19;
+  }
+  100% {
+    box-shadow: 0.5px 0.5px 10px 1px #2dbf19, -0.5px -0.5px 10px 1px #2dbf19;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -66,4 +75,8 @@ body {
 section {
   overflow-x: hidden;
   height: 100vh;
+}
+
+#shadowAnimation {
+  animation: pulse 1.2s alternate infinite;
 }
