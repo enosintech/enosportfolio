@@ -1,33 +1,16 @@
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import SplitType from "split-type";
 import { useState, useEffect } from "react";
 import Lottie from "lottie-react";
-import { Tilt } from 'react-tilt';
+import { Tilt } from "react-tilt";
 
 import { triggerToAnimations } from "../utils/animations";
-import { enos4, javascript, letterE, letterN, letterO, letterS, nodejs, reactjs, scrollAnimation, tailwindcss } from "../lib";
-
-const Image = (props) => {
-    return (
-        <img src={props.src} className="w-full h-full object-cover absolute top-0 left-0 motiv" alt={props.alt}/>
-    )
-}
+import { enos1, javascript, nodejs, reactjs, scrollAnimation, tailwindcss } from "../lib";
 
 const About = () => {
 
     const [ time, setTime ] = useState([]);
-
-    const defaultOptions = {
-        reverse:        false,  
-        max:            35,     
-        perspective:    1000,   
-        scale:          1.1,   
-        speed:          1000,   
-        transition:     true,  
-        axis:           null,   
-        reset:          true,   
-        easing:         "cubic-bezier(.03,.98,.52,.99)",   
-    }
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -41,72 +24,53 @@ const About = () => {
 
         const split = SplitType.create(".aboutText", {types: "words"});
 
-        triggerToAnimations(".growImage", {
-            height: "70%"
-        }, {
-            trigger: "#aboutImageGrowTrigger",
-            start: "top bottom",
-            end: "top top",
-            toggleActions: "play none none reverse",
-            scrub: 10,
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: "#aboutImageAppearTrigger",
+                start: "top 40%",
+                toggleActions: "play none none reverse",
+            }
         })
-
-        triggerToAnimations(split?.words, {
+        .to("#aboutText", {
+            backdropFilter: "blur(8px)",
+            duration: 0.5,
+            ease: "power1.in"
+        })
+        .to("#textDown", {
+            y: 0,
+            duration: 0.5,
+            ease: "power1.in",
+        }).to(split?.words, {
             color: "white",
-            stagger: 0.5,
-        }, {
-            trigger: "#aboutImageAppearTrigger",
-            start: "top 30%",
-            end: "bottom 5%",
-            scrub: true,
-        })
-
-        triggerToAnimations("#divShrink", {
-            scale: 0.8,
-            opacity: 0,
-        }, {
-            trigger: "#work",
-            start: "top bottom",
-            end: "top top",
-            scrub: true,
-        })
-
-        triggerToAnimations("#scaleDownImage", {
-            scale: 1,
-        }, {
-            trigger: "#aboutImageGrowTrigger",
-            start: "top center",
-            end: "bottom top",
-            scrub: 10
+            stagger: 0.02,
+            duration: 1,
+            ease: "power1.in",
         })
 
     }, [])
 
   return (
     <>
-        <div id="scrollDissapearTrigger" className="w-[100vw] h-full flex items-start justify-evenly pt-[90px]">
-            <div className="flex items-center h-full">
-                <Tilt options={defaultOptions} className="w-[100%] h-[20%] flex items-center relative growImage">
-                    <div className="relative w-full h-full overflow-hidden rounded-[20px] shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
-                        <p className="absolute z-20 top-2 w-full text-center font-nohemiSemiBold">HOVER ME</p>
-                        <img id="scaleDownImage" src={enos4} className="w-full h-full object-cover scale-[2]" alt="main about image"/> 
+        <div id="scrollDissapearTrigger" className="w-[50vw] h-full flex items-start justify-evenly pt-[90px]">
+            <Tilt className="w-[75%] h-[80%] relative rounded-[50px] overflow-hidden shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
+                <img src={enos1} className="w-full h-full object-cover absolute top-0 left-0 z-[-1]" alt="enos main"/>
+                <div id="aboutText" className="w-full h-full relative z-[5] rounded-[20px] pt-14 pl-10">
+                    <div id="textDown" className="flex flex-col gap-y-10 translate-y-72">
+                        <h1 className="font-nohemiBold text-2xl">01. WHO</h1>
+                        <p className="text-4xl font-nohemiLight text-justify max-w-[80%]">
+                            Hi there, I am <span className="font-nohemiExtraBold">Enos Nsamba Jr</span>, a software developer and lifelong learner. <span className="text-transparent aboutText">I have an orientation for detail and symmetrical design.</span> <span className="text-transparent aboutText">I love when things fit and I have a keen eye for when they don't.</span>
+                        </p>
                     </div>
-                </Tilt>
-            </div>
-            <div id="aboutText" className="w-[45%] h-[90%] relative rounded-[20px] backdrop-blur shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] flex flex-col gap-y-10 pt-14 pl-10">
-                <h1 className="font-nohemiBold text-2xl">01. WHO</h1>
-                <p className="text-5xl font-nohemiLight text-justify max-w-[80%]">
-                    Hi there, I am <text className="font-nohemiExtraBold">Enos Nsamba Jr</text>, a software developer and lifelong learner. <text className="text-transparent aboutText">I have an orientation for detail and symmetrical design.</text> <text className="text-transparent aboutText">I love when things fit and I have a keen eye for when they don't.</text>
-                </p>
-            </div>
+                </div>
+            </Tilt>
         </div>
         <div className="w-[100vw] h-full flex items-start pl-[130px] pt-[90px]">
-            <div id="divShrink" className="w-[85%] h-[90%] rounded-[20px] backdrop-blur shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] flex items-center pl-20">
+            <div className="w-[85%] h-[90%] rounded-[40px] backdrop-blur shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] flex items-center pl-20">
                 <div className="h-[85%] w-[90%] flex">
                     <div className="w-[40%] h-full flex flex-col items-center relative">
-                        <div className="flex flex-col text-center text-6xl mt-2">
-                            <p className="font-nohemiExtraLight">CURRENTLY IN</p>
-                            <p className="font-nohemiBlack tracking-wider">LUSAKA, ZM</p>
+                        <div className="flex flex-col text-center text-5xl mt-2">
+                            <p className="font-light stretch tracking-tighter">CURRENTLY IN</p>
+                            <p className="font-black font tracking-tight stretch">LUSAKA, ZM</p>
                         </div>
                         <span className="w-[85%] h-0 border-b-4 border-white mt-5"></span>
                         <div className="w-[85%] h-[30%] mt-5 flex flex-row-reverse items-center justify-center">

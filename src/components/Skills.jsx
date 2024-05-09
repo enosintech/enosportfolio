@@ -2,6 +2,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 import { noEndTriggerPinAnimations } from "../utils/animations";
+import SkillsComponent from "./SkillsComponent";
+import { skills } from "../constants";
 
 const Skills = () => {
 
@@ -144,32 +146,46 @@ const Skills = () => {
     }, [])
 
   return (
-    <section id="skills" className="w-full h-[400vh] flex flex-col">
-        <div id="skillsPin" className="w-full h-[100vh] flex items-center justify-center">
-            <div className="w-[85%] h-[85%] flex flex-col pt-5">
-                <p className="font-nohemiMedium text-8xl text-nowrap translate-y-2">SKILLS &</p>
-                <p className="font-nohemiExtraBold text-9xl">SERVICES</p>
-                <div className="w-full h-[55%] mt-20 relative flex items-center justify-start">
-                    <div id="card1" className="w-[65%] h-full bg-red-500 rounded-[20px] z-[6] absolute shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]"></div>
-                    <div id="card2" className="w-[65%] h-[90%] left-[80px] bg-black rounded-[20px] z-[5] absolute overflow-hidden shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
-                        <div id="orangeOpacity" className="bg-orange-500 opacity-50 w-full h-full"></div>
-                    </div>
-                    <div id="card3" className="w-[65%] h-[80%] left-[150px] bg-black rounded-[20px] z-[4] absolute overflow-hidden shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
-                        <div id="purpleOpacity" className="bg-purple-500 opacity-40 w-full h-full"></div>
-                    </div>
-                    <div id="card4" className="w-[65%] h-[70%] left-[210px] bg-black rounded-[20px] z-[3] absolute overflow-hidden shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
-                        <div id="yellowOpacity" className="bg-yellow-500 opacity-30 w-full h-full"></div>
-                    </div>
-                    <div id="card5" className="w-[65%] h-[60%] left-[260px] bg-black rounded-[20px] z-[2] absolute overflow-hidden shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
-                        <div id="blueOpacity" className="bg-blue-500 opacity-20 w-full h-full"></div>
-                    </div>
-                    <div id="card6" className="w-[65%] h-[50%] left-[310px] bg-black rounded-[20px] z-[1] absolute overflow-hidden shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
-                        <div id="pinkOpacity" className="bg-pink-500 opacity-10 w-full h-full"></div>
+    <>
+        <section id="skills" className="w-full h-[400vh] flex flex-col">
+            <div id="skillsPin" className="w-full h-[100vh] flex items-center justify-center">
+                <div className="w-[85%] h-[85%] flex flex-col pt-5">
+                    <p className="font-nohemiMedium text-4xl sm:text-6xl lg:text-8xl text-nowrap translate-y-2">SKILLS &</p>
+                    <p className="font-nohemiExtraBold text-5xl sm:text-7xl lg:text-9xl">SERVICES</p>
+                    <div className="w-full h-[55%] mt-24 md:mt-10 lg:mt-5 relative flex items-center justify-start">
+                        <div id="card1" className="w-[65%] h-full bg-zinc-900 rounded-[40px] z-[6] absolute flex lg:flex-row flex-col shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
+                            <SkillsComponent {...skills[0]}/>
+                        </div>
+                        <div id="card2" className="w-[65%] h-[90%] left-[80px] bg-black rounded-[40px] z-[5] absolute overflow-hidden shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
+                            <div id="orangeOpacity" className="bg-zinc-900 opacity-50 w-full h-full">
+                                <SkillsComponent {...skills[1]}/>
+                            </div>
+                        </div>
+                        <div id="card3" className="w-[65%] h-[80%] left-[150px] bg-black rounded-[40px] z-[4] absolute overflow-hidden shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
+                            <div id="purpleOpacity" className="bg-zinc-900 opacity-40 w-full h-full">
+                                <SkillsComponent {...skills[2]}/>
+                            </div>
+                        </div>
+                        <div id="card4" className="w-[65%] h-[70%] left-[210px] bg-black rounded-[40px] z-[3] absolute overflow-hidden shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
+                            <div id="yellowOpacity" className="bg-zinc-900 opacity-30 w-full h-full">
+                                <SkillsComponent {...skills[3]}/>
+                            </div>
+                        </div>
+                        <div id="card5" className="w-[65%] h-[60%] left-[260px] bg-black rounded-[40px] z-[2] absolute overflow-hidden shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
+                            <div id="blueOpacity" className="bg-zinc-900 opacity-20 w-full h-full">
+                                <SkillsComponent {...skills[4]}/>
+                            </div>
+                        </div>
+                        <div id="card6" className="w-[65%] h-[50%] left-[310px] bg-black rounded-[40px] z-[1] absolute overflow-hidden shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
+                            <div id="pinkOpacity" className="bg-zinc-900 opacity-10 w-full h-full">
+                                <SkillsComponent {...skills[5]}/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </>
   )
 }
 

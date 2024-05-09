@@ -31,7 +31,7 @@ export const triggerFromAnimations = (target, animationProps, scrollProps) => {
     })
 }
 
-export const noEndTriggerPinAnimations = (target, start = "top top", end = "bottom -700%") => {
+export const noEndTriggerPinAnimations = (target, start = "top top", end = "bottom -600%") => {
     ScrollTrigger.create({
         trigger: target,
         start: start,

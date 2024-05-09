@@ -19,7 +19,7 @@ const ScrollPrompt = () => {
   }, [])
 
   return (
-    <Lottie id="scrollPrompt" animationData={scrollAnimation} loop={true} className="fixed bottom-0 right-5 w-[120px] z-[100] nonblue"/>
+    <Lottie id="scrollPrompt" animationData={scrollAnimation} loop={true} className="fixed bottom-0 left-5 w-[120px] pointer-events-none z-[100] nonblue"/>
   )
 }
 

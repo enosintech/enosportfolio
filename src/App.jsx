@@ -10,6 +10,7 @@ import Landing from "./components/Landing";
 import Work from "./components/Work";
 import Skills from "./components/Skills";
 import Epilogue from "./components/Epilogue";
+import EyeTrigger from "./components/EyeTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,6 +22,7 @@ const App = () => {
       <Cursor />
       <NavBar />
       <Landing />
+      <EyeTrigger />
       <Work />
       <Skills />
       <Epilogue />
