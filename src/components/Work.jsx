@@ -29,7 +29,7 @@ const Work = () => {
 
   return (
     <>
-        <section id="work" className="w-full h-[400lvh] flex flex-col relative z-20">
+        <section id="work" className="w-full h-[400lvh] flex flex-col relative z-20 bg-black">
           <div id="workPin" className="w-full h-[100lvh] absolute z-10 top-0 overflow-hidden flex items-center justify-center">
             <div className="w-full h-full absolute top-0 left-0 z-[-1]">
               <div id="interWater" className="w-screen h-screen flex items-center justify-center relative">
