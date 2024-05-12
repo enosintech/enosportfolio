@@ -36,7 +36,8 @@ export const noEndTriggerPinAnimations = (target, start = "top top", end = "bott
         trigger: target,
         start: start,
         end: end,
-        pin: true
+        pin: true,
+        invalidateOnRefresh: true
     })
 }
 
@@ -46,6 +47,7 @@ export const endTriggerPinAnimations = (target, start = "top top") => {
         start: start,
         endTrigger: "#contactTrigger",
         end: "bottom -100%",
-        pin: true
+        pin: true,
+        invalidateOnRefresh: true,
     })
 }
