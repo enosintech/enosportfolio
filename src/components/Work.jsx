@@ -32,7 +32,7 @@ const Work = () => {
         <section id="work" className="w-full flex flex-col h-[400vh] relative z-20 bg-black">
           <div id="workPin" className="w-full h-[100vh] absolute z-10 top-0 overflow-hidden flex items-center justify-center">
             <div className="w-full h-full absolute top-0 left-0 z-[-1]">
-              <div id="interWater" className="w-screen flex items-center justify-center relative">
+              <div id="interWater" className="w-screen h-[100vh] flex items-center justify-center relative">
                 <div className="flex flex-col items-center justify-end">
                   <h4 className="font-nohemiBold text-2xl lg:translate-x-3 w-full text-left">02</h4>
                   <h1 className="font-nohemiExtraBold text-6xl md:text-7xl lg:text-9xl">SELECTED</h1>

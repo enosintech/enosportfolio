@@ -91,25 +91,8 @@ body {
   align-items: center;
 }
 
-#eyescale {
-  height: calc(var(--doc-height) * 2);
-}
-
-#interWater {
-  height: var(--doc-height);
-}
-
-#landing {
-  height: calc(var(--doc-height) * 8);
-}
-
-.landingDivHeight {
-  height: var(--doc-height);
-}
-
 section {
   overflow-x: hidden;
-  height: var(--doc-height);
 }
 
 #shadowAnimation {
