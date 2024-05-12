@@ -29,10 +29,10 @@ const Work = () => {
 
   return (
     <>
-        <section id="work" className="w-full flex flex-col h-[400vh] relative z-20 bg-black">
-          <div id="workPin" className="w-full h-[100vh] absolute z-10 top-0 overflow-hidden flex items-center justify-center">
+        <section id="work" className="w-full flex flex-col h-[400dvh] relative z-20 bg-black">
+          <div id="workPin" className="w-full h-[100dvh] absolute z-10 top-0 overflow-hidden flex items-center justify-center">
             <div className="w-full h-full absolute top-0 left-0 z-[-1]">
-              <div id="interWater" className="w-screen h-[100vh] flex items-center justify-center relative">
+              <div id="interWater" className="w-screen h-[100dvh] flex items-center justify-center relative">
                 <div className="flex flex-col items-center justify-end">
                   <h4 className="font-nohemiBold text-2xl lg:translate-x-3 w-full text-left">02</h4>
                   <h1 className="font-nohemiExtraBold text-6xl md:text-7xl lg:text-9xl">SELECTED</h1>
@@ -60,7 +60,7 @@ const Work = () => {
             </div>
             <Lottie className="absolute z-20 lg:bottom-0 top-2 left-3 lg:right-5 size-20 md:size-32 lg:size-40" animationData={workScrollAnimation} loop={true} autoPlay={true}/>
           </div>
-          <div id="bgVideoTrigger" className="w-full h-[100vh]"></div>
+          <div id="bgVideoTrigger" className="w-full h-[100dvh]"></div>
         </section>
     </>
   )

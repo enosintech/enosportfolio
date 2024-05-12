@@ -1,6 +1,6 @@
 const EyeTrigger = () => {
   return (
-    <section id="eyescale" className="w-full h-[200vh]"></section>
+    <section id="eyescale" className="w-full h-[200dvh]"></section>
   )
 }
 
