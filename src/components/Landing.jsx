@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 
-import { endTriggerPinAnimations, noEndTriggerPinAnimations, noTriggerToAnimations, triggerToAnimations } from "../utils/animations";
+import { endTriggerPinAnimations, noEndTriggerPinAnimations, triggerToAnimations } from "../utils/animations";
 
 import ModelView from "./ModelView";
 import About from "./About";
@@ -18,7 +18,7 @@ const Landing = () => {
         noEndTriggerPinAnimations("#landingSlider");
 
         triggerToAnimations("#landingSlider", {
-            xPercent: -58,
+            xPercent: window.innerWidth < 768 ? -70 : -60,
             ease: "power1.in"
         }, {
             trigger: "#landing",
@@ -39,7 +39,7 @@ const Landing = () => {
 
   return (
     <section id="landing" className="w-full h-[800vh] flex flex-col relative">
-        <div id="landingSlider" className="w-[250vw] h-[100vh] flex overflow-x-hidden absolute top-0 left-0 z-10">
+        <div id="landingSlider" className="md:w-[250vw] w-[400vw] h-[100vh] flex overflow-x-hidden absolute top-0 left-0 z-10">
             <Hero />
             <About />
         </div>
@@ -49,7 +49,7 @@ const Landing = () => {
               <source src={landingBgVideo} type="video/mp4" />
             </video>
           </div>
-          <div className="circle border-8 z-10 border-white absolute shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]"></div>
+          <div className="circle z-10 absolute"></div>
             <ModelView />
             <HeroInfo />
         </div>

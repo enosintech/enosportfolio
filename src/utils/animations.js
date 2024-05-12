@@ -40,7 +40,7 @@ export const noEndTriggerPinAnimations = (target, start = "top top", end = "bott
     })
 }
 
-export const endTriggerPinAnimations = (target, start = "top top", end = "top bottom", endTrigger = "#bgVideoTrigger") => {
+export const endTriggerPinAnimations = (target, start = "top top", end = "bottom -600%", endTrigger = "html") => {
     ScrollTrigger.create({
         trigger: target,
         start: start,

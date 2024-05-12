@@ -51,7 +51,7 @@ const NavBar = () => {
   return (
     <nav className="w-fit left-0 right-0 mx-auto overflow-x-hidden h-fit shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] rounded-full flex items-center justify-center fixed bottom-5 z-[100]">
         <div id="paddingDiv" className="w-fit pl-8 lg:pl-12 pr-2 py-2 rounded-full bg-zinc-900 flex items-center relative nonblue shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
-            <h1 id="logoText" className="font-nohemiExtraBold text-xl sm:text-2xl md:text-3xl lg:text-4xl mr-5">ENOSINTECH</h1>
+            <h1 id="logoText" className="font-nohemiExtraBold text-xl sm:text-2xl md:text-3xl lg:leading-[40px] lg:text-[33px] mr-5">ENOSINTECH</h1>
             <ul id="paddingReduce" className="w-[350px] lg:flex hidden items-center pl-10 pr-10 justify-between font-nohemiMedium text-[17p]">
                 <li className="navlink group active:opacity-50">
                     <a className="group-hover:text-themeblue transition-all">WHO?</a>

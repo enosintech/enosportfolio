@@ -6,9 +6,9 @@ Source: https://sketchfab.com/3d-models/blue-eyeball-free-18915d2f17a2431fbefeb3
 Title: Blue Eyeball (Free)
 */
 
-import React, { useRef } from 'react'
+import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
-import { useGLTF } from '@react-three/drei'
+import { Outlines, useGLTF } from '@react-three/drei';
 
 import { noTriggerToAnimations, triggerToAnimations } from '../utils/animations';
 
@@ -31,19 +31,35 @@ export function Model(props) {
       scrub: true,
     })
 
-    triggerToAnimations(modelRef?.current.rotation, {
+    const landingContainer = document.getElementById("landing");
+
+    landingContainer.addEventListener("mouseleave", () => {
+      noTriggerToAnimations(modelRef?.current.rotation, {
         x: 0,
         y: 0,
         z: 0,
         duration: 1,
         ease: "power1.in",
-    }, {
-        trigger: "#eyescale",
-        start: "top 60%",
-        toggleActions: 'play none none reverse'
+      })
     })
 
-    const landingContainer = document.getElementById("landing");
+    landingContainer.addEventListener("mouseenter", (e) => {
+
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      const anchor = document.querySelector(".circle");
+      const rekt = anchor.getBoundingClientRect();
+      const anchorX = rekt.left + rekt.width / 2;
+      const anchorY = rekt.top + rekt.height / 2;
+
+      const angleDeg = angle(mouseX, mouseY, anchorX, anchorY);
+
+      noTriggerToAnimations(modelRef?.current.rotation, {
+        x: angleDeg < 90 && angleDeg > 0 || angleDeg > 90  ? -0.2 : 0.2,
+        y: angleDeg < 90 && angleDeg > -90 ? -0.2 : 0.2,
+      })
+    })
 
     landingContainer.addEventListener("mousemove", (e) => {
 
@@ -59,9 +75,25 @@ export function Model(props) {
 
       noTriggerToAnimations(modelRef?.current.rotation, {
         x: angleDeg < 90 && angleDeg > 0 || angleDeg > 90  ? -0.2 : 0.2,
-        y: angleDeg < 90 && angleDeg > -90 ? -0.2 : 0.2
+        y: angleDeg < 90 && angleDeg > -90 ? -0.2 : 0.2,
       })
 
+    })
+
+    window.addEventListener("resize", () => {
+      if(window.innerWidth < 1024){
+        noTriggerToAnimations(modelRef?.current.scale, {
+          x: 1.7,
+          y: 1.7,
+          z: 1.7,
+        })
+      } else {
+        noTriggerToAnimations(modelRef?.current.scale, {
+          x: 2.1,
+          y: 2.1,
+          z: 2.1,
+        })
+      }
     })
 
   }, [])
@@ -76,15 +108,16 @@ export function Model(props) {
 
   return (
     <group {...props} dispose={null}>
-      <group ref={modelRef} scale={[2.27, 2.27, 2.27]}>
+      <group ref={modelRef} scale={window.innerWidth < 1024 ? [1.7, 1.7, 1.7] : [2.1, 2.1, 2.1]}>
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.defaultMaterial.geometry}
           material={materials.blinn2}
           rotation={[0, 0, Math.PI / 4]}
-          scale={[1, 1, 1]}
-        />
+        >
+          <Outlines polygonOffset polygonOffsetFactor={10000} thickness={0.03} color="white"/>
+        </mesh>
       </group>
     </group>
   )

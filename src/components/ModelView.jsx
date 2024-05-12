@@ -7,7 +7,6 @@ import Lights from "./Lights";
 const ModelView = () => {
   return (
     <Canvas
-        className={`w-fit h-fit absolute`}
     >
         <ambientLight intensity={1}/>
         <Lights />
