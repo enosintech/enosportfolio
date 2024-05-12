@@ -12,10 +12,25 @@ import Skills from "./components/Skills";
 import Epilogue from "./components/Epilogue";
 import EyeTrigger from "./components/EyeTrigger";
 import LandingBg from "./components/LandingBg";
+import { useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
+
+  const documentHeight = () => {
+    const doc = document.documentElement;
+    doc.style.setProperty('--doc-height', `${window.innerHeight}px`)
+   }
+
+  useEffect(() => {
+    documentHeight();
+
+    window.addEventListener("resize", documentHeight);
+
+    return () => window.removeEventListener("resize", documentHeight);
+  }, [])
+
   return (
     <>
       <ScrollPrompt />

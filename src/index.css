@@ -82,6 +82,10 @@ body {
   background-color: black;
 }
 
+#bgVideoTrigger {
+  height: var(--doc-height);
+}
+
 .circle{
   width: 500px;
   height: 500px;
@@ -91,8 +95,21 @@ body {
   align-items: center;
 }
 
+#eyescale {
+  height: calc(var(--doc-height) * 2);
+}
+
+#landing {
+  height: calc(var(--doc-height) * 8);
+}
+
+.landingDivHeight {
+  height: var(--doc-height);
+}
+
 section {
   overflow-x: hidden;
+  height: var(--doc-height);
 }
 
 #shadowAnimation {
@@ -101,5 +118,13 @@ section {
 
 .stretch {
   font-stretch: ultra-expanded;
+}
+
+#work {
+  height: calc(var(--doc-height) * 4)
+}
+
+#workPin {
+  height: var(--doc-height)
 }
 
