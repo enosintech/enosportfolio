@@ -56,6 +56,10 @@
   }
 }
 
+:root {
+  --doc-height: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -63,11 +67,17 @@
   cursor: none !important;
 }
 
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100vh; 
+  height: var(--doc-height);
+}
+
 body {
   color: white;
   width: 100vw;
   overflow-x: hidden;
-  height: 100lvh;
   user-select: none;
   background-color: black;
 }
@@ -81,9 +91,16 @@ body {
   align-items: center;
 }
 
+#eyescale {
+  height: 200vh;
+}
+
+#landing {
+  height: 800%;
+}
+
 section {
   overflow-x: hidden;
-  height: 100lvh;
 }
 
 #shadowAnimation {
