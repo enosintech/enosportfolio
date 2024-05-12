@@ -25,7 +25,7 @@ const Landing = () => {
 
   return (
     <section id="landing" className="w-full flex flex-col relative">
-        <div id="landingSlider" className="md:w-[250vw] w-[400vw] landingDivHeight flex overflow-x-hidden absolute top-0 left-0 z-10">
+        <div id="landingSlider" className="md:w-[250vw] w-[400vw] bg-red-500 landingDivHeight flex overflow-x-hidden absolute top-0 left-0 z-10">
             <Hero />
             <About />
         </div>
