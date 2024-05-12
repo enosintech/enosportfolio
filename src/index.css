@@ -67,7 +67,7 @@ body {
   color: white;
   width: 100vw;
   overflow-x: hidden;
-  height: 100vh;
+  height: 100lvh;
   user-select: none;
   background-color: black;
 }
@@ -83,7 +83,7 @@ body {
 
 section {
   overflow-x: hidden;
-  height: 100vh;
+  height: 100lvh;
 }
 
 #shadowAnimation {

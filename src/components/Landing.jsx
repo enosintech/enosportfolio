@@ -24,18 +24,18 @@ const Landing = () => {
     }, [])
 
   return (
-    <section id="landing" className="w-full h-[800vh] flex flex-col relative">
-        <div id="landingSlider" className="md:w-[250vw] w-[400vw] h-[100vh] flex overflow-x-hidden absolute top-0 left-0 z-10">
+    <section id="landing" className="w-full h-[800lvh] flex flex-col relative">
+        <div id="landingSlider" className="md:w-[250vw] w-[400vw] h-[100lvh] flex overflow-x-hidden absolute top-0 left-0 z-10">
             <Hero />
             <About />
         </div>
-        <div className="w-full h-[100vh]"></div>
-        <div className="w-full h-[100vh]"></div>
-        <div id="aboutImageGrowTrigger" className="w-full h-[100vh]"></div>
-        <div className="w-full h-[100vh]"></div>
-        <div id="aboutImageAppearTrigger" className="w-full h-[100vh]"></div>
-        <div className="w-full h-[100vh]"></div>
-        <div className="w-full h-[100vh]"></div>
+        <div className="w-full h-[100lvh]"></div>
+        <div className="w-full h-[100lvh]"></div>
+        <div id="aboutImageGrowTrigger" className="w-full h-[100lvh]"></div>
+        <div className="w-full h-[100lvh]"></div>
+        <div id="aboutImageAppearTrigger" className="w-full h-[100lvh]"></div>
+        <div className="w-full h-[100lvh]"></div>
+        <div className="w-full h-[100lvh]"></div>
     </section>
   )
 }

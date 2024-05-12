@@ -5,7 +5,7 @@ const Skills = () => {
 
   return (
     <>
-        <section id="skills" className="w-full h-[250vh] md:h-[150vh] px-5 py-4">
+        <section id="skills" className="w-full h-[250lvh] md:h-[150lvh] px-5 py-4">
             <div className="w-full h-full flex flex-col">
                 <div className="w-full h-[20%] sm:px-12 flex flex-col items-center">
                     <div className="w-full h-[60%] flex justify-center">
