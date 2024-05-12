@@ -40,12 +40,12 @@ export const noEndTriggerPinAnimations = (target, start = "top top", end = "bott
     })
 }
 
-export const endTriggerPinAnimations = (target, start = "top top", end = "bottom -600%", endTrigger = "html") => {
+export const endTriggerPinAnimations = (target, start = "top top") => {
     ScrollTrigger.create({
         trigger: target,
         start: start,
-        end: end,
-        endTrigger: endTrigger,
+        endTrigger: "#contactTrigger",
+        end: "bottom -100%",
         pin: true
     })
 }
