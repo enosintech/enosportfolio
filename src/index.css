@@ -82,10 +82,6 @@ body {
   background-color: black;
 }
 
-#bgVideoTrigger {
-  height: var(--doc-height);
-}
-
 .circle{
   width: 500px;
   height: 500px;
@@ -122,13 +118,5 @@ section {
 
 .stretch {
   font-stretch: ultra-expanded;
-}
-
-#work {
-  height: calc(var(--doc-height) * 4)
-}
-
-#workPin {
-  height: var(--doc-height)
 }
 

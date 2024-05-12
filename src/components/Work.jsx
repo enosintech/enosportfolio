@@ -29,8 +29,8 @@ const Work = () => {
 
   return (
     <>
-        <section id="work" className="w-full flex flex-col relative z-20 bg-black">
-          <div id="workPin" className="w-full absolute z-10 top-0 overflow-hidden flex items-center justify-center">
+        <section id="work" className="w-full flex flex-col h-[400vh] relative z-20 bg-black">
+          <div id="workPin" className="w-full h-[100vh] absolute z-10 top-0 overflow-hidden flex items-center justify-center">
             <div className="w-full h-full absolute top-0 left-0 z-[-1]">
               <div id="interWater" className="w-screen flex items-center justify-center relative">
                 <div className="flex flex-col items-center justify-end">
@@ -60,7 +60,7 @@ const Work = () => {
             </div>
             <Lottie className="absolute z-20 lg:bottom-0 top-2 left-3 lg:right-5 size-20 md:size-32 lg:size-40" animationData={workScrollAnimation} loop={true} autoPlay={true}/>
           </div>
-          <div id="bgVideoTrigger" className="w-full"></div>
+          <div id="bgVideoTrigger" className="w-full h-[100vh]"></div>
         </section>
     </>
   )
