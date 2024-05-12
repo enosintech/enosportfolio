@@ -91,14 +91,6 @@ body {
   align-items: center;
 }
 
-#eyescale {
-  height: 200vh;
-}
-
-#landing {
-  height: 800%;
-}
-
 section {
   overflow-x: hidden;
 }
