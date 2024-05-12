@@ -48,7 +48,6 @@ export const cypressIcon = cypress;
 export const testcaseImg = testcase;
 export const appstoreIcon = appstore;
 export const playstoreIcon = playstore;
-
 export const dotsIcon = dots;
 
 export const enos1 = mainenos1;

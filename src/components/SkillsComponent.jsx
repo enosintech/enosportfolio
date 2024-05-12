@@ -1,4 +1,5 @@
 import { useGSAP } from "@gsap/react";
+
 import { triggerToAnimations } from "../utils/animations";
 
 const SkillsComponent = (props) => {
