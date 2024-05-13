@@ -9,7 +9,7 @@ const Landing = () => {
 
     useGSAP(() => {
 
-        noEndTriggerPinAnimations("#landingSlider");
+        noEndTriggerPinAnimations("#landing", "#landingSlider");
 
         triggerToAnimations("#landingSlider", {
             xPercent: window.innerWidth < 768 ? -70 : -60,

@@ -22,7 +22,7 @@ const Hero = () => {
             heroImgs.push(heroImgs.shift())
     
             gsap.delayedCall(1, crossFade);
-            }
+        }
 
         gsap.delayedCall(0, crossFade)    
 

@@ -12,7 +12,7 @@ const Work = () => {
 
   useGSAP(() => {
     
-    noEndTriggerPinAnimations("#workPin", "top top", "bottom -200%");
+    noEndTriggerPinAnimations("#work", "#workPin");
 
     triggerToAnimations(".comeup", {
       y: 0,

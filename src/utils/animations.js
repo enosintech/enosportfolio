@@ -1,10 +1,6 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-ScrollTrigger.config({
-    ignoreMobileResize: true,
-})
-
 export const noTriggerToAnimations = (target, animationProps) => {
     gsap.to(target, {
         ...animationProps
@@ -35,24 +31,12 @@ export const triggerFromAnimations = (target, animationProps, scrollProps) => {
     })
 }
 
-export const noEndTriggerPinAnimations = (target, start = "top top", end = "bottom -600%") => {
+export const noEndTriggerPinAnimations = (target, pin, start = "top top", end = "bottom bottom") => {
     ScrollTrigger.create({
         trigger: target,
         start: start,
         end: end,
-        pin: true,
-        invalidateOnRefresh: true,
-        
-    })
-}
-
-export const endTriggerPinAnimations = (target, start = "top top") => {
-    ScrollTrigger.create({
-        trigger: target,
-        start: start,
-        endTrigger: "#contactTrigger",
-        end: "bottom -100%",
-        pin: true,
+        pin: pin,
         invalidateOnRefresh: true,
     })
 }
