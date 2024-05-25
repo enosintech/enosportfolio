@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import Lottie from "lottie-react";
 import { Tilt } from "react-tilt";
 
-import { enos2, javascript, nodejs, reactjs, scrollAnimation, tailwindcss } from "../lib";
+import { enos2, javascript, nodejs, reactjs, scrollAnimation, tailwindcss, workScrollAnimation } from "../lib";
 
 const About = () => {
 
@@ -119,7 +119,7 @@ const About = () => {
                                     <p className="font-nohemiMedium text-lg sm:text-xl md:text-[14px] lg:text-xl 2xl:text-3xl mt-1 text-nowrap">02. SELECTED WORKS</p>
                                 </div>
                                 <div className="w-[30%] h-full flex items-center justify-center">
-                                    <Lottie className="w-full h-full" animationData={scrollAnimation} loop={true} autoPlay={true} />
+                                    <Lottie className="w-full h-full" animationData={workScrollAnimation} loop={true} autoPlay={true} />
                                 </div>
                             </div>
                         </div>

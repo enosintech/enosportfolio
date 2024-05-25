@@ -30,7 +30,7 @@ const Epilogue = () => {
 
   return (
     <>
-        <section id="propose" className="w-full h-[100dvh] flex flex-col items-center justify-center gap-y-6 bg-black">
+        <section id="propose" className="w-full h-full flex flex-col items-center justify-center gap-y-6 bg-black">
             <p className="max-w-[50%] font-nohemiMedium text-center text-xl lg:text-4xl"> I <span className="goneWord">spend plenty of time</span> think<span className="goneWord">ing</span> about <span className="goneWord">how best to execute a clients vision. I pay close attention to</span> the finest of details <span className="goneWord">and attempt</span> to <span className="goneWord">always</span> advance user experience</p>
             <img src={dotsIcon} className="w-[50px] invert" alt="dots icon" />
             <div className="flex flex-col items-center gap-y-2">
@@ -42,7 +42,7 @@ const Epilogue = () => {
                 </div>
             </div>
         </section>
-        <section id="contactTrigger" className="w-full h-[100dvh] relative z-10 flex items-center justify-center bg-black">
+        <section id="contactTrigger" className="w-full h-full relative z-10 flex items-center justify-center bg-black">
             <div id="contactBg" className="w-full relative h-full overflow-hidden">
                 <div className="flex flex-col absolute z-[1000] bottom-3 right-2 sm:right-4 md:right-7 lg:right-10 items-center gap-y-2">
                     <div className="hover:opacity-70 active:opacity-50 navlink lg:w-14 md:w-12 w-10 lg:h-14 md:h-12 h-10 rounded-full bg-zinc-900 flex items-center justify-center">
@@ -84,7 +84,7 @@ const Epilogue = () => {
                     </div>
                     <div className="w-full lg:h-[50%] h-[70%] flex lg:flex-row flex-col items-center lg:items-start pt-14 justify-between px-10">
                         <div className="flex flex-col md:w-[60%] sm:w-[80%] w-full lg:w-[40%] lg:max-w-[40%] lg:min-h-full min-h-[40%] gap-y-5">
-                            <p className="font-nohemiMedium text-center lg:text-justify text-2xl lg:text-5xl">Reach out today! <span className="text-white">You maybe have a project idea, want to collab, hire me long term, or simply say hello. It does not matter!</span></p>
+                            <p className="font-nohemiMedium text-center lg:text-justify text-2xl lg:text-5xl">Reach out today! <span className="text-white">You maybe have a project idea 💡, want to collab 🤝, hire me long term ♾️, or simply say hello 👋🏾 . It does not matter!</span></p>
                         </div>
                         <div className="lg:max-w-[40%] lg:w-[40%] -translate-y-14 lg:h-full h-[60%] flex flex-col">
                             <div className="h-[80%] flex flex-col">
